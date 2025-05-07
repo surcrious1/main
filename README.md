@@ -19,7 +19,7 @@
 
 ## 🔧 Technologies To Be Used
 
-- C Language
+- Python
 - Struct (`typedef struct`)
 - Array and Dynamic Memory Allocation
 - 기타 자료구조 및 알고리즘 (추후 확정)

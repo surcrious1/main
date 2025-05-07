@@ -1,202 +1,204 @@
 <!DOCTYPE html>
-<html lang = "ko">
-<head>
-<meta charset = "UTF-8">
-<title>´º½º °Ë»ö< / title>
-<style>
-body{
-  font - family: Arial, sans - serif;
-  margin : 0;
-  padding : 0;
-  background: #111;
-  color: #fff;
-}
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ë‰´ìŠ¤ ê²€ìƒ‰</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #111;
+        color: #fff;
+      }
 
-/* °øÅë */
-.center{		//flex Á¤·Ä·Î °¡¿îµ¥ Á¤·Ä(ÆäÀÌÁöÀÇ ¼öÁ÷, ¼öÆò Áß¾Ó)
-  display: flex;
-  flex - direction: column;
-  align - items: center;
-  justify - content: center;
-}
+      /* ê³µí†µ */
+      .center {
+        /* flex ì •ë ¬ë¡œ ê°€ìš´ë° ì •ë ¬(í˜ì´ì§€ì˜ ìˆ˜ì§, ìˆ˜í‰ ì¤‘ì•™) */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
 
-/* ¸ŞÀÎ ÆäÀÌÁö */
-.main - container{	//¸ŞÀÎ È­¸éÀÇ ÀüÃ¼
-  height: 100vh;
-}
+      /* ë©”ì¸ í˜ì´ì§€ */
+      .main-container {
+        /* ë©”ì¸ í™”ë©´ì˜ ì „ì²´ */
+        height: 100vh;
+      }
 
-.logo{			//yaho, È¨ÆäÀÌÁö ÀÌ¸§À» º¸¿©ÁÙ °÷(È­¸é ¼³°è yaho ºÎºĞ)
-  font - size: 30px;
-  margin - bottom: 20px;
-  color: #0ff;
-}
+      .logo {
+        /* yaho, í™ˆí˜ì´ì§€ ì´ë¦„ì„ ë³´ì—¬ì¤„ ê³³ */
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: #0ff;
+      }
 
-.search - box{		//°Ë»ö¾î ¹Ú½º, ¹öÆ°ÀÇ À§Ä¡ ³ª¶õÈ÷ Á¤·Ä
-  display: flex;
-}
+      .search-box {
+        /* ê²€ìƒ‰ì–´ ë°•ìŠ¤, ë²„íŠ¼ì˜ ìœ„ì¹˜ ë‚˜ë€íˆ ì •ë ¬ */
+        display: flex;
+      }
 
-.search - input{		//°Ë»ö¿¡ ÀÔ·Â°ªÀ» º¸¿©ÁÖ´Â ½ºÅ¸ÀÏ(ÆĞµù, Å×µÎ¸®, ¸ğ¼­¸®)
-  padding: 10px;
-  font - size: 16px;
-  width: 300px;
-  border: none;
-  border - radius: 5px 0 0 5px;
-}
+      .search-input {
+        /* ê²€ìƒ‰ ì…ë ¥ ìŠ¤íƒ€ì¼ */
+        padding: 10px;
+        font-size: 16px;
+        width: 300px;
+        border: none;
+        border-radius: 5px 0 0 5px;
+      }
 
-.search - button{	//°Ë»ö ¹öÆ°ÀÇ ½ºÅ¸ÀÏ(»ö»ó, ¹Ú½º ½ºÅ¸ÀÏ)
-  padding: 10px 20px;
-  font - size: 16px;
-  border: none;
-  background: #0ff;
-  color: #000;
-  border - radius: 0 5px 5px 0;
-  cursor: pointer;
-}
+      .search-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        background: #0ff;
+        color: #000;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+      }
 
-/* °Ë»ö °á°ú ÆäÀÌÁö */
-.results - container{	//°á°ú Ã¢ÀÇ ÀüÃ¼ ¿©¹é ¼³Á¤
-  padding: 30px;
-}
+      /* ê²€ìƒ‰ ê²°ê³¼ í˜ì´ì§€ */
+      .results-container {
+        padding: 30px;
+      }
 
-.current - keyword{	//°Ë»ö Å°¿öµå¸¦ Áß¾Ó »ó´Ü¿¡ Ç¥½Ã
-  text - align: center;
-  font - size: 24px;
-  margin - bottom: 20px;
-  color: #0ff;
-}
+      .current-keyword {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #0ff;
+      }
 
-.scroll - box{		//Çìµå¶óÀÎ ¸®½ºÆ®¸¦ ´ã´Â ¹Ú½º, ³»ºÎ ½ºÅ©·ÑÀ» À§ÇØ ³ôÀÌ °íÁ¤
-  max - height: 400px;
-  overflow - y: auto;
-  border: 1px solid #555;
-  padding: 15px;
-  border - radius: 10px;
-  background: #222;
-}
+      .scroll-box {
+        max-height: 400px;
+        overflow-y: auto;
+        border: 1px solid #555;
+        padding: 15px;
+        border-radius: 10px;
+        background: #222;
+      }
 
-.headline - item{	//´º½º Çìµå¶óÀÎ ¹Ú½º + ¹Ú½º ½ºÅ¸ÀÏ
-  padding: 10px;
-  margin - bottom: 10px;
-  background: #fff;
-  color: #000;
-  border - radius: 5px;
-  transition: background 0.3s, color 0.3s;
-  cursor: pointer;
-}
+      .headline-item {
+        padding: 10px;
+        margin-bottom: 10px;
+        background: #fff;
+        color: #000;
+        border-radius: 5px;
+        transition: background 0.3s, color 0.3s;
+        cursor: pointer;
+      }
 
-.headline - item:hover{ //¸¶¿ì½º¸¦ ¿Ã·Á³õÀ¸¸é º¯°æµÉ »çÇ×
-  background: #0ff;
-  color: #000;
-  font - weight: bold;
-}
+      .headline-item:hover {
+        background: #0ff;
+        color: #000;
+        font-weight: bold;
+      }
 
-/* ´º½º »ó¼¼ ÆäÀÌÁö */
-.news - detail - container{ //´º½º Àü¹® ·¹ÀÌ¾Æ¿ô
-  display: flex;
-  padding: 30px;
-  gap: 20px;
-}
+      /* ë‰´ìŠ¤ ìƒì„¸ í˜ì´ì§€ */
+      .news-detail-container {
+        display: flex;
+        padding: 30px;
+        gap: 20px;
+      }
 
-.news - left{		   //¿ŞÂÊ ¿µ¿ª (´º½º Àü¹®°ú Çìµå¶óÀÎ)
-  width: 60 %;
-  background: #222;
-  padding: 20px;
-  border - radius: 10px;
-}
+      .news-left {
+        width: 60%;
+        background: #222;
+        padding: 20px;
+        border-radius: 10px;
+      }
 
-.news - right{		   //¿À¸¥ÂÊ ¿µ¿ª(¿ä¾à¹® + ¹öÆ°µé)
-  width: 40 %;
-  background: #333;
-  padding: 20px;
-  border - radius: 10px;
-}
+      .news-right {
+        width: 40%;
+        background: #333;
+        padding: 20px;
+        border-radius: 10px;
+      }
 
-.news - headline{	   //´º½º Á¦¸ñ ÅØ½ºÆ® ½ºÅ¸ÀÏ
-  font - size: 22px;
-  margin - bottom: 15px;
-  color: #0ff;
-}
+      .news-headline {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: #0ff;
+      }
 
-.news - full - text{		//Àü¹® ¹Ú½º ¼³Á¤ + ½ºÅ©·Ñ
-  max - height: 400px; //ÇÊ¿ä¿¡ µû¶ó Á¶Á¤
-  overflow - y: auto;
-  line - height: 1.6;
-}
+      .news-full-text {
+        max-height: 400px;
+        overflow-y: auto;
+        line-height: 1.6;
+      }
 
-.summary - box{		//¿ä¾à¹® ¹Ú½º
-  min - height: 100px; //±âº» ³ôÀÌ¸¸ ¼³Á¤ 
-  background: #444;
-  padding: 10px;
-  border - radius: 5px;
-}
+      .summary-box {
+        min-height: 100px;
+        background: #444;
+        padding: 10px;
+        border-radius: 5px;
+      }
 
-.action - buttons button{//¿ä¾à, Àü¹® ÀĞ¾îÁÙ ¹Ú½º
-  margin - top: 10px;
-  padding: 10px;
-  background: #0ff;
-  border: none;
-  border - radius: 5px;
-  cursor: pointer;
-  font - weight: bold;
-}
+      .action-buttons button {
+        margin-top: 10px;
+        padding: 10px;
+        background: #0ff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-.back - button{		    //ÀÌÀü ÆäÀÌÁö·Î °¡´Â ¹öÆ°
-  margin - top: 30px;
-  display: inline - block;
-  padding: 10px 20px;
-  background: #0ff;
-  color: #000;
-  text - decoration: none;
-  border - radius: 5px;
-}
-< / style>
-< / head>
-<body>
+      .back-button {
+        margin-top: 30px;
+        display: inline-block;
+        padding: 10px 20px;
+        background: #0ff;
+        color: #000;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
 
-<!--¸ŞÀÎ ÆäÀÌÁö-->
-<div class = "main-container center">
-<div class = "logo">yaho< / div>
-<form class = "search-box" action = "/search/" method = "get">
-<input class = "search-input" type = "text" name = "q" placeholder = "°Ë»ö¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä">
-<button class = "search-button" type = "submit">°Ë»ö< / button>
-< / form>
-< / div>
+  <body>
+    <!-- ë©”ì¸ í˜ì´ì§€ -->
+    <div class="main-container center">
+      <div class="logo">yaho</div>
+      <form class="search-box" action="/search/" method="get">
+        <input class="search-input" type="text" name="q" placeholder="ê²€ìƒ‰ì–´ë¥¼ ì…ë ¥í•˜ì„¸ìš”" />
+        <button class="search-button" type="submit">ê²€ìƒ‰</button>
+      </form>
+    </div>
 
-<!--°Ë»ö °á°ú ÆäÀÌÁö-->
-<div class = "results-container">
-< div class = "current-keyword">"Á¤Ä¡" °Ë»ö °á°ú< / div>
-<form class = "search-box center" action = "/search/" method = "get">
-<input class = "search-input" type = "text" name = "q" placeholder = "´Ù½Ã °Ë»ö">
-<button class = "search-button" type = "submit">°Ë»ö< / button>
-< / form>
-<div class = "scroll-box">
-<div class = "headline-item">~Çìµå¶óÀÎ 1~< / div>
-<div class = "headline-item">~Çìµå¶óÀÎ 2~< / div>
-<div class = "headline-item">~Çìµå¶óÀÎ 3~< / div>
-<!--°è¼Ó ¹İº¹-->
-< / div>
-< / div>
+    <!-- ê²€ìƒ‰ ê²°ê³¼ í˜ì´ì§€ -->
+    <div class="results-container">
+      <div class="current-keyword">"ì •ì¹˜" ê²€ìƒ‰ ê²°ê³¼</div>
+      <form class="search-box center" action="/search/" method="get">
+        <input class="search-input" type="text" name="q" placeholder="ë‹¤ì‹œ ê²€ìƒ‰" />
+        <button class="search-button" type="submit">ê²€ìƒ‰</button>
+      </form>
+      <div class="scroll-box">
+        <div class="headline-item">~í—¤ë“œë¼ì¸ 1~</div>
+        <div class="headline-item">~í—¤ë“œë¼ì¸ 2~</div>
+        <div class="headline-item">~í—¤ë“œë¼ì¸ 3~</div>
+        <!-- ê³„ì† ë°˜ë³µ -->
+      </div>
+    </div>
 
-<!--´º½º »ó¼¼ ÆäÀÌÁö-->
-<div class = "news-detail-container">
-<div class = "news-left">
-<div class = "news-headline">~Çìµå¶óÀÎ Á¦¸ñ~< / div>
-<div class = "news-full-text">
-~ÀüÃ¼ ±â»ç ³»¿ë~
-< / div>
-< / div>
-<div class = "news-right">
-<div class = "summary-box">
-<h3>¿ä¾à< / h3>
-<p>~¿ä¾à ³»¿ë~< / p>
-< / div>
-<div class = "action-buttons">
-<button>¿ä¾à ÀĞ¾îÁÖ±â< / button>
-<button>Àü¹® ÀĞ¾îÁÖ±â< / button>
-< / div>
-<a href = "/search/?q=Á¤Ä¡" class = "back-button">ÀÌÀü ÆäÀÌÁö·Î< / a>
-< / div>
-< / div>
-
-< / body>
-< / html>
+    <!-- ë‰´ìŠ¤ ìƒì„¸ í˜ì´ì§€ -->
+    <div class="news-detail-container">
+      <div class="news-left">
+        <div class="news-headline">~í—¤ë“œë¼ì¸ ì œëª©~</div>
+        <div class="news-full-text">~ì „ì²´ ê¸°ì‚¬ ë‚´ìš©~</div>
+      </div>
+      <div class="news-right">
+        <div class="summary-box">
+          <h3>ìš”ì•½</h3>
+          <p>~ìš”ì•½ ë‚´ìš©~</p>
+        </div>
+        <div class="action-buttons">
+          <button>ìš”ì•½ ì½ì–´ì£¼ê¸°</button>
+          <button>ì „ë¬¸ ì½ì–´ì£¼ê¸°</button>
+        </div>
+        <a href="/search/?q=ì •ì¹˜" class="back-button">ì´ì „ í˜ì´ì§€ë¡œ</a>
+      </div>
+    </div>
+  </body>
+</html>

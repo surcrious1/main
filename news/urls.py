@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import latest_news
+from .views import *
 
+app_name = 'news'
 urlpatterns = [
-    path('api/news/', latest_news),
+    path('', index, name = "Test"),
 ]
